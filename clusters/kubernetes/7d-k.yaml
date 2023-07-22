@@ -9,7 +9,7 @@ spec:
   - name: infra-k-mysql
   healthChecks:
   - kind: Deployment
-    name: fluxcd-k8s-app
+    name: block-buster-7-7-0
     namespace: 7-demo
   interval: 10s
   path: ./
