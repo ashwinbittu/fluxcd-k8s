@@ -14,3 +14,19 @@ spec:
         name: 5-demo
   interval: 10s
   targetNamespace: 5-demo
+  values:
+    image:
+      pullPolicy: Always
+      repository: ashwinbittu/block-buster-dev:7.5.0
+      tag: ""
+    labels:
+      app:
+        env: dev
+        name: fluxcd-k8s
+        version: 7.5.0
+    namespace:
+      name: 5-demo
+    replicaCount: 2
+    service:
+      nodePort: 30005
+      type: NodePort
