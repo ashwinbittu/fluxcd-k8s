@@ -1,0 +1,21 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: 7d-app
+  namespace: flux-system
+spec:
+  dependsOn:
+  - name: infra-k-mysql
+  healthChecks:
+  - kind: Deployment
+    name: fluxcd-k8s-app
+    namespace: 7-demo
+  interval: 10s
+  path: ./
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: 7d
+  targetNamespace: 7-demo
+  timeout: 2m0s

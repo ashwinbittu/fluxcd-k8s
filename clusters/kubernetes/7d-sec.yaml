@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: 7d
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  provider: generic
+  ref:
+    tag: 7.7.0-298ca3c
+  secretRef:
+    name: ghcr-auth
+  url: oci://ghcr.io/ashwinbittu/fluxcd-k8s-app
